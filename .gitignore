@@ -1,0 +1,23 @@
+# environments and caches
+.venv/
+.venv-tm/
+__pycache__/
+*.pyc
+*.tmp
+# large data: rebuilt by the scripts (see README); keep only the small patch metadata
+data/*
+!data/patches/
+data/patches/*
+!data/patches/meta.csv
+!data/patches/stats.json
+!data/patches/info.json
+!data/patches/scenes.json
+# model weights are downloaded from Hugging Face by the scripts
+weights/
+# run logs and per-seed checkpoints are local working files
+logs/
+results/_ckpt/
+results/*/_ckpt/
+# local secrets
+.env
+*.env

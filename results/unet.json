@@ -1,0 +1,1238 @@
+{
+ "model": "unet",
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "train_seconds": 4663.641573349635,
+ "train_seconds_note": "mean wall-clock seconds to train one seed (incl. per-epoch val); per seed below",
+ "conditions": {
+  "clean": {
+   "pooled": {
+    "iou_mangrove": {
+     "mean": 0.7928482715433209,
+     "sd": 0.019236576341355976
+    },
+    "iou_other": {
+     "mean": 0.9413470704763576,
+     "sd": 0.006752075274021192
+    },
+    "miou": {
+     "mean": 0.8670976710098391,
+     "sd": 0.01297243502730833
+    },
+    "precision_mangrove": {
+     "mean": 0.9037936922027955,
+     "sd": 0.0254031992484887
+    },
+    "recall_mangrove": {
+     "mean": 0.8660757318618736,
+     "sd": 0.009795902809643327
+    },
+    "f1_mangrove": {
+     "mean": 0.884371472317978,
+     "sd": 0.011905303937818888
+    },
+    "accuracy": {
+     "mean": 0.9520845413208008,
+     "sd": 0.0055126118414760075
+    },
+    "mangrove_share_truth": {
+     "mean": 0.21137863159179685,
+     "sd": 3.3993498887762956e-17
+    }
+   },
+   "per_site": {
+    "kendari": {
+     "iou_mangrove": {
+      "mean": 0.4675921793626651,
+      "sd": 0.029388562887031854
+     },
+     "iou_other": {
+      "mean": 0.9757435136840943,
+      "sd": 0.0014015477753193581
+     },
+     "miou": {
+      "mean": 0.7216678465233798,
+      "sd": 0.015353897718562024
+     },
+     "precision_mangrove": {
+      "mean": 0.8373536565731291,
+      "sd": 0.027056016299087517
+     },
+     "recall_mangrove": {
+      "mean": 0.5144978810210242,
+      "sd": 0.033046554447101695
+     },
+     "f1_mangrove": {
+      "mean": 0.6368613469300061,
+      "sd": 0.027135690476377865
+     },
+     "accuracy": {
+      "mean": 0.9762484741210938,
+      "sd": 0.001397433866815793
+     },
+     "mangrove_share_truth": {
+      "mean": 0.04054168701171875,
+      "sd": 0.0
+     }
+    },
+    "kubu_raya": {
+     "iou_mangrove": {
+      "mean": 0.8994593930824752,
+      "sd": 0.0060033299135175645
+     },
+     "iou_other": {
+      "mean": 0.9730064166246356,
+      "sd": 0.0014576404942580868
+     },
+     "miou": {
+      "mean": 0.9362329048535555,
+      "sd": 0.0037303232933923215
+     },
+     "precision_mangrove": {
+      "mean": 0.9606151854089342,
+      "sd": 0.0032170750337813998
+     },
+     "recall_mangrove": {
+      "mean": 0.9339400775948999,
+      "sd": 0.009386834412353752
+     },
+     "f1_mangrove": {
+      "mean": 0.9470618142020036,
+      "sd": 0.003329994073562202
+     },
+     "accuracy": {
+      "mean": 0.9782562255859375,
+      "sd": 0.0012267799184745112
+     },
+     "mangrove_share_truth": {
+      "mean": 0.20831451416015626,
+      "sd": 0.0
+     }
+    },
+    "mimika": {
+     "iou_mangrove": {
+      "mean": 0.900864953798718,
+      "sd": 0.007883215394697945
+     },
+     "iou_other": {
+      "mean": 0.9113074314337308,
+      "sd": 0.005571935691411856
+     },
+     "miou": {
+      "mean": 0.9060861926162244,
+      "sd": 0.006725351916405363
+     },
+     "precision_mangrove": {
+      "mean": 0.9642669169365398,
+      "sd": 0.00537909162433233
+     },
+     "recall_mangrove": {
+      "mean": 0.9320723122736658,
+      "sd": 0.013225202221772103
+     },
+     "f1_mangrove": {
+      "mean": 0.9478353213709089,
+      "sd": 0.004369399058529802
+     },
+     "accuracy": {
+      "mean": 0.9508833312988281,
+      "sd": 0.003646087352739075
+     },
+     "mangrove_share_truth": {
+      "mean": 0.47901229858398436,
+      "sd": 0.0
+     }
+    },
+    "segara_anakan": {
+     "iou_mangrove": {
+      "mean": 0.42372242370719415,
+      "sd": 0.035057306529579405
+     },
+     "iou_other": {
+      "mean": 0.895535562335247,
+      "sd": 0.02148508291436674
+     },
+     "miou": {
+      "mean": 0.6596289930212206,
+      "sd": 0.028265568266836988
+     },
+     "precision_mangrove": {
+      "mean": 0.6025554563919778,
+      "sd": 0.10908377214716533
+     },
+     "recall_mangrove": {
+      "mean": 0.5983510699238872,
+      "sd": 0.03634139118039325
+     },
+     "f1_mangrove": {
+      "mean": 0.5946647961273683,
+      "sd": 0.034542987635684946
+     },
+     "accuracy": {
+      "mean": 0.9029501342773437,
+      "sd": 0.019534666213247353
+     },
+     "mangrove_share_truth": {
+      "mean": 0.11764602661132813,
+      "sd": 0.0
+     }
+    }
+   },
+   "per_seed": [
+    {
+     "pooled": {
+      "iou_mangrove": 0.7850091485221943,
+      "iou_other": 0.9395826751543718,
+      "miou": 0.862295911838283,
+      "precision_mangrove": 0.905537222084822,
+      "recall_mangrove": 0.855027030421767,
+      "f1_mangrove": 0.8795575632450982,
+      "accuracy": 0.9505021667480469,
+      "pixels": 26214400,
+      "mangrove_share_truth": 0.21137863159179687
+     },
+     "per_site": {
+      "kendari": {
+       "iou_mangrove": 0.44182191457781356,
+       "iou_other": 0.974953463929994,
+       "miou": 0.7083876892539038,
+       "precision_mangrove": 0.8489844333084551,
+       "recall_mangrove": 0.479506499958599,
+       "f1_mangrove": 0.6128661384747859,
+       "accuracy": 0.9754403686523437,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.04054168701171875
+      },
+      "kubu_raya": {
+       "iou_mangrove": 0.893087706289075,
+       "iou_other": 0.9714441870872542,
+       "miou": 0.9322659466881646,
+       "precision_mangrove": 0.9632925438790634,
+       "recall_mangrove": 0.9245522666842464,
+       "f1_mangrove": 0.9435249125776113,
+       "accuracy": 0.9769439697265625,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.20831451416015626
+      },
+      "mimika": {
+       "iou_mangrove": 0.8922394266830047,
+       "iou_other": 0.905111859736925,
+       "miou": 0.8986756432099648,
+       "precision_mangrove": 0.9689290719918762,
+       "recall_mangrove": 0.9185198398983199,
+       "f1_mangrove": 0.9430513011210776,
+       "accuracy": 0.9468609619140625,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.47901229858398436
+      },
+      "segara_anakan": {
+       "iou_mangrove": 0.4217421328346114,
+       "iou_other": 0.8953411926390492,
+       "miou": 0.6585416627368303,
+       "precision_mangrove": 0.584040292593798,
+       "recall_mangrove": 0.6028067262858218,
+       "f1_mangrove": 0.5932751419468159,
+       "accuracy": 0.9027633666992188,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.11764602661132813
+      }
+     },
+     "confusion_pooled": [
+      [
+       20178999,
+       494237
+      ],
+      [
+       803319,
+       4737845
+      ]
+     ]
+    },
+    {
+     "pooled": {
+      "iou_mangrove": 0.7787690280371186,
+      "iou_other": 0.9356523613897325,
+      "miou": 0.8572106947134255,
+      "precision_mangrove": 0.8775636424278018,
+      "recall_mangrove": 0.8736987391096889,
+      "f1_mangrove": 0.8756269259944272,
+      "accuracy": 0.9475361633300782,
+      "pixels": 26214400,
+      "mangrove_share_truth": 0.21137863159179687
+     },
+     "per_site": {
+      "kendari": {
+       "iou_mangrove": 0.461356440481689,
+       "iou_other": 0.974915345115267,
+       "miou": 0.718135892798478,
+       "precision_mangrove": 0.8064270796159899,
+       "recall_mangrove": 0.5188111135366248,
+       "f1_mangrove": 0.6314085019936925,
+       "accuracy": 0.9754429626464843,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.04054168701171875
+      },
+      "kubu_raya": {
+       "iou_mangrove": 0.9050098031637164,
+       "iou_other": 0.9743300209922134,
+       "miou": 0.9396699120779649,
+       "precision_mangrove": 0.957046397322311,
+       "recall_mangrove": 0.9433259352041078,
+       "f1_mangrove": 0.950136636211252,
+       "accuracy": 0.9793743896484375,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.20831451416015626
+      },
+      "mimika": {
+       "iou_mangrove": 0.9026587301709631,
+       "iou_other": 0.9129026741507951,
+       "miou": 0.907780702160879,
+       "precision_mangrove": 0.965490112806201,
+       "recall_mangrove": 0.9327531532162886,
+       "f1_mangrove": 0.9488393434484751,
+       "accuracy": 0.9518177795410157,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.47901229858398436
+      },
+      "segara_anakan": {
+       "iou_mangrove": 0.3896972356857864,
+       "iou_other": 0.8741483236827464,
+       "miou": 0.6319227796842664,
+       "precision_mangrove": 0.5039141927087372,
+       "recall_mangrove": 0.6322591941686501,
+       "f1_mangrove": 0.5608376064639418,
+       "accuracy": 0.883509521484375,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.11764602661132813
+      }
+     },
+     "confusion_pooled": [
+      [
+       19997784,
+       675452
+      ],
+      [
+       699856,
+       4841308
+      ]
+     ]
+    },
+    {
+     "pooled": {
+      "iou_mangrove": 0.8147666380706499,
+      "iou_other": 0.9488061748849687,
+      "miou": 0.8817864064778093,
+      "precision_mangrove": 0.9282802120957625,
+      "recall_mangrove": 0.8695014260541648,
+      "f1_mangrove": 0.897929927714409,
+      "accuracy": 0.9582152938842774,
+      "pixels": 26214400,
+      "mangrove_share_truth": 0.21137863159179687
+     },
+     "per_site": {
+      "kendari": {
+       "iou_mangrove": 0.4995981830284928,
+       "iou_other": 0.9773617320070217,
+       "miou": 0.7384799575177572,
+       "precision_mangrove": 0.8566494567949423,
+       "recall_mangrove": 0.5451760295678487,
+       "f1_mangrove": 0.6663094003215397,
+       "accuracy": 0.9778620910644531,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.04054168701171875
+      },
+      "kubu_raya": {
+       "iou_mangrove": 0.9002806697946344,
+       "iou_other": 0.9732450417944395,
+       "miou": 0.9367628557945369,
+       "precision_mangrove": 0.9615066150254284,
+       "recall_mangrove": 0.9339420308963456,
+       "f1_mangrove": 0.9475238938171474,
+       "accuracy": 0.9784503173828125,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.20831451416015626
+      },
+      "mimika": {
+       "iou_mangrove": 0.907696704542186,
+       "iou_other": 0.9159077604134724,
+       "miou": 0.9118022324778292,
+       "precision_mangrove": 0.9583815660115422,
+       "recall_mangrove": 0.9449439437063889,
+       "f1_mangrove": 0.9516153195431738,
+       "accuracy": 0.9539712524414062,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.47901229858398436
+      },
+      "segara_anakan": {
+       "iou_mangrove": 0.4597279026011847,
+       "iou_other": 0.9171171706839455,
+       "miou": 0.6884225366425651,
+       "precision_mangrove": 0.7197118838733982,
+       "recall_mangrove": 0.5599872893171899,
+       "f1_mangrove": 0.6298816399713474,
+       "accuracy": 0.9225775146484375,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.11764602661132813
+      }
+     },
+     "confusion_pooled": [
+      [
+       20300989,
+       372247
+      ],
+      [
+       723114,
+       4818050
+      ]
+     ]
+    }
+   ]
+  },
+  "cloud50": {
+   "pooled": {
+    "iou_mangrove": {
+     "mean": 0.5485867847101028,
+     "sd": 0.16150000488764726
+    },
+    "iou_other": {
+     "mean": 0.8359700957086765,
+     "sd": 0.09603999644517919
+    },
+    "miou": {
+     "mean": 0.6922784402093894,
+     "sd": 0.12341684546482568
+    },
+    "precision_mangrove": {
+     "mean": 0.7059890762522403,
+     "sd": 0.1935201824008838
+    },
+    "recall_mangrove": {
+     "mean": 0.7367118773841259,
+     "sd": 0.1686717411978492
+    },
+    "f1_mangrove": {
+     "mean": 0.6995871062027575,
+     "sd": 0.1282114598002625
+    },
+    "accuracy": {
+     "mean": 0.8617875798543294,
+     "sd": 0.0787022617359459
+    },
+    "mangrove_share_truth": {
+     "mean": 0.21137863159179685,
+     "sd": 3.3993498887762956e-17
+    }
+   },
+   "per_site": {
+    "kendari": {
+     "iou_mangrove": {
+      "mean": 0.22135785736152006,
+      "sd": 0.17551671822476772
+     },
+     "iou_other": {
+      "mean": 0.8731413504214206,
+      "sd": 0.14810993331948893
+     },
+     "miou": {
+      "mean": 0.5472496038914704,
+      "sd": 0.1552232573801418
+     },
+     "precision_mangrove": {
+      "mean": 0.3521102098218729,
+      "sd": 0.2855734366279469
+     },
+     "recall_mangrove": {
+      "mean": 0.4292343824098399,
+      "sd": 0.11417635243056788
+     },
+     "f1_mangrove": {
+      "mean": 0.34011244297045873,
+      "sd": 0.23420609862077896
+     },
+     "accuracy": {
+      "mean": 0.8753874715169271,
+      "sd": 0.145375539576722
+     },
+     "mangrove_share_truth": {
+      "mean": 0.04054168701171875,
+      "sd": 0.0
+     }
+    },
+    "kubu_raya": {
+     "iou_mangrove": {
+      "mean": 0.6000935194730267,
+      "sd": 0.21788219260208055
+     },
+     "iou_other": {
+      "mean": 0.8390744761411791,
+      "sd": 0.12928609853285492
+     },
+     "miou": {
+      "mean": 0.7195839978071029,
+      "sd": 0.1695142884204388
+     },
+     "precision_mangrove": {
+      "mean": 0.705315698328845,
+      "sd": 0.2344182390990487
+     },
+     "recall_mangrove": {
+      "mean": 0.8141509364859619,
+      "sd": 0.1504114822249518
+     },
+     "f1_mangrove": {
+      "mean": 0.7353513087578355,
+      "sd": 0.16236324159321436
+     },
+     "accuracy": {
+      "mean": 0.8665337626139323,
+      "sd": 0.10492472391913862
+     },
+     "mangrove_share_truth": {
+      "mean": 0.20831451416015626,
+      "sd": 0.0
+     }
+    },
+    "mimika": {
+     "iou_mangrove": {
+      "mean": 0.695189799178691,
+      "sd": 0.15546744303825463
+     },
+     "iou_other": {
+      "mean": 0.7449011149360999,
+      "sd": 0.10170376402643222
+     },
+     "miou": {
+      "mean": 0.7200454570573953,
+      "sd": 0.12477860651412621
+     },
+     "precision_mangrove": {
+      "mean": 0.875213331756226,
+      "sd": 0.08379490303552088
+     },
+     "recall_mangrove": {
+      "mean": 0.7816128348923549,
+      "sd": 0.1887497281576078
+     },
+     "f1_mangrove": {
+      "mean": 0.8134750899157005,
+      "sd": 0.10999490615006277
+     },
+     "accuracy": {
+      "mean": 0.8366684977213542,
+      "sd": 0.07879872608543612
+     },
+     "mangrove_share_truth": {
+      "mean": 0.47901229858398436,
+      "sd": 0.0
+     }
+    },
+    "segara_anakan": {
+     "iou_mangrove": {
+      "mean": 0.31813166113691693,
+      "sd": 0.04966272546376898
+     },
+     "iou_other": {
+      "mean": 0.8596062335497369,
+      "sd": 0.03806634428884326
+     },
+     "miou": {
+      "mean": 0.588868947343327,
+      "sd": 0.0333782391192238
+     },
+     "precision_mangrove": {
+      "mean": 0.47718072420249086,
+      "sd": 0.09379467392870343
+     },
+     "recall_mangrove": {
+      "mean": 0.5227298569183512,
+      "sd": 0.1459028842727749
+     },
+     "f1_mangrove": {
+      "mean": 0.48128191874182513,
+      "sd": 0.056501373574499636
+     },
+     "accuracy": {
+      "mean": 0.8685605875651041,
+      "sd": 0.03376283249496481
+     },
+     "mangrove_share_truth": {
+      "mean": 0.11764602661132813,
+      "sd": 0.0
+     }
+    }
+   },
+   "per_seed": [
+    {
+     "pooled": {
+      "iou_mangrove": 0.4697338519220103,
+      "iou_other": 0.853898521220784,
+      "miou": 0.6618161865713972,
+      "precision_mangrove": 0.7786633300983758,
+      "recall_mangrove": 0.5421191287606719,
+      "f1_mangrove": 0.6392094069381701,
+      "accuracy": 0.8706406402587891,
+      "pixels": 26214400,
+      "mangrove_share_truth": 0.21137863159179687
+     },
+     "per_site": {
+      "kendari": {
+       "iou_mangrove": 0.19811653455979103,
+       "iou_other": 0.9490586039276326,
+       "miou": 0.5735875692437118,
+       "precision_mangrove": 0.3589679182090605,
+       "recall_mangrove": 0.30658200787371936,
+       "f1_mangrove": 0.3307132968206344,
+       "accuracy": 0.9496917724609375,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.04054168701171875
+      },
+      "kubu_raya": {
+       "iou_mangrove": 0.5215062864254456,
+       "iou_other": 0.8586302335750048,
+       "miou": 0.6900682600002253,
+       "precision_mangrove": 0.7368118334126326,
+       "recall_mangrove": 0.6408926099281429,
+       "f1_mangrove": 0.6855131537453554,
+       "accuracy": 0.8775041198730469,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.20831451416015626
+      },
+      "mimika": {
+       "iou_mangrove": 0.5361097278749911,
+       "iou_other": 0.6795803780837626,
+       "miou": 0.6078450529793769,
+       "precision_mangrove": 0.9151560123790886,
+       "recall_mangrove": 0.5641494558422301,
+       "f1_mangrove": 0.6980096774943668,
+       "accuracy": 0.7661688232421875,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.47901229858398436
+      },
+      "segara_anakan": {
+       "iou_mangrove": 0.27580594491899413,
+       "iou_other": 0.8843161626293123,
+       "miou": 0.5800610537741533,
+       "precision_mangrove": 0.5441237811164541,
+       "recall_mangrove": 0.35869028086717986,
+       "f1_mangrove": 0.43236347348499954,
+       "accuracy": 0.8891978454589844,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.11764602661132813
+      }
+     },
+     "confusion_pooled": [
+      [
+       19819351,
+       853885
+      ],
+      [
+       2537193,
+       3003971
+      ]
+     ]
+    },
+    {
+     "pooled": {
+      "iou_mangrove": 0.4416612343030556,
+      "iou_other": 0.7322292529946913,
+      "miou": 0.5869452436488735,
+      "precision_mangrove": 0.4866522208665271,
+      "recall_mangrove": 0.826908750580203,
+      "f1_mangrove": 0.6127115355454065,
+      "accuracy": 0.7790331268310546,
+      "pixels": 26214400,
+      "mangrove_share_truth": 0.21137863159179687
+     },
+     "per_site": {
+      "kendari": {
+       "iou_mangrove": 0.05861969603691458,
+       "iou_other": 0.7024650522264203,
+       "miou": 0.38054237413166747,
+       "precision_mangrove": 0.06316968058809222,
+       "recall_mangrove": 0.44868532974022746,
+       "f1_mangrove": 0.11074741242084442,
+       "accuracy": 0.7078773498535156,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.04054168701171875
+      },
+      "kubu_raya": {
+       "iou_mangrove": 0.43240722162217543,
+       "iou_other": 0.7011245468935867,
+       "miou": 0.5667658842578811,
+       "precision_mangrove": 0.4567417174345354,
+       "recall_mangrove": 0.890302590810205,
+       "f1_mangrove": 0.603749010888792,
+       "accuracy": 0.7565548706054688,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.20831451416015626
+      },
+      "mimika": {
+       "iou_mangrove": 0.7026862783500317,
+       "iou_other": 0.693041919828463,
+       "miou": 0.6978640990892473,
+       "precision_mangrove": 0.7789201566055604,
+       "recall_mangrove": 0.877746153147801,
+       "f1_mangrove": 0.8253854950084659,
+       "accuracy": 0.8221028137207032,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.47901229858398436
+      },
+      "segara_anakan": {
+       "iou_mangrove": 0.3057865110915641,
+       "iou_other": 0.8157693516417438,
+       "miou": 0.5607779313666539,
+       "precision_mangrove": 0.36997717281346015,
+       "recall_mangrove": 0.6380049416021946,
+       "f1_mangrove": 0.4683560574323038,
+       "accuracy": 0.8295974731445312,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.11764602661132813
+      }
+     },
+     "confusion_pooled": [
+      [
+       15839849,
+       4833387
+      ],
+      [
+       959127,
+       4582037
+      ]
+     ]
+    },
+    {
+     "pooled": {
+      "iou_mangrove": 0.7343652679052424,
+      "iou_other": 0.9217825129105539,
+      "miou": 0.8280738904078981,
+      "precision_mangrove": 0.8526516777918177,
+      "recall_mangrove": 0.8411077528115032,
+      "f1_mangrove": 0.8468403761246961,
+      "accuracy": 0.9356889724731445,
+      "pixels": 26214400,
+      "mangrove_share_truth": 0.21137863159179687
+     },
+     "per_site": {
+      "kendari": {
+       "iou_mangrove": 0.4073373414878546,
+       "iou_other": 0.967900395110209,
+       "miou": 0.6876188682990318,
+       "precision_mangrove": 0.6341930306684659,
+       "recall_mangrove": 0.5324358096155728,
+       "f1_mangrove": 0.5788766196698975,
+       "accuracy": 0.9685932922363282,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.04054168701171875
+      },
+      "kubu_raya": {
+       "iou_mangrove": 0.8463670503714589,
+       "iou_other": 0.957468647954946,
+       "miou": 0.9019178491632025,
+       "precision_mangrove": 0.9223935441393669,
+       "recall_mangrove": 0.9112576087195376,
+       "f1_mangrove": 0.9167917616393595,
+       "accuracy": 0.9655422973632812,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.20831451416015626
+      },
+      "mimika": {
+       "iou_mangrove": 0.8467733913110498,
+       "iou_other": 0.862081046896074,
+       "miou": 0.8544272191035619,
+       "precision_mangrove": 0.9315638262840287,
+       "recall_mangrove": 0.902942895687034,
+       "f1_mangrove": 0.9170300972442685,
+       "accuracy": 0.9217338562011719,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.47901229858398436
+      },
+      "segara_anakan": {
+       "iou_mangrove": 0.37280252740019254,
+       "iou_other": 0.8787331863781547,
+       "miou": 0.6257678568891736,
+       "precision_mangrove": 0.5174412186775582,
+       "recall_mangrove": 0.5714943482856791,
+       "f1_mangrove": 0.5431262253081721,
+       "accuracy": 0.8868864440917968,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.11764602661132813
+      }
+     },
+     "confusion_pooled": [
+      [
+       19867809,
+       805427
+      ],
+      [
+       880448,
+       4660716
+      ]
+     ]
+    }
+   ]
+  },
+  "cloud100": {
+   "pooled": {
+    "iou_mangrove": {
+     "mean": 0.17361141018777745,
+     "sd": 0.10024200898025386
+    },
+    "iou_other": {
+     "mean": 0.4037043501029258,
+     "sd": 0.2168432170178872
+    },
+    "miou": {
+     "mean": 0.2886578801453516,
+     "sd": 0.05876344847638381
+    },
+    "precision_mangrove": {
+     "mean": 0.20198955918599815,
+     "sd": 0.06925143239263054
+    },
+    "recall_mangrove": {
+     "mean": 0.5952408795937701,
+     "sd": 0.43367038058587404
+    },
+    "f1_mangrove": {
+     "mean": 0.2871051904370721,
+     "sd": 0.1537293516033519
+    },
+    "accuracy": {
+     "mean": 0.4919789505004883,
+     "sd": 0.1450778194340103
+    },
+    "mangrove_share_truth": {
+     "mean": 0.21137863159179685,
+     "sd": 3.3993498887762956e-17
+    }
+   },
+   "per_site": {
+    "kendari": {
+     "iou_mangrove": {
+      "mean": 0.016207067958369476,
+      "sd": 0.006896017115220769
+     },
+     "iou_other": {
+      "mean": 0.3181870174325795,
+      "sd": 0.412178890070468
+     },
+     "miou": {
+      "mean": 0.1671970426954745,
+      "sd": 0.2031088385519844
+     },
+     "precision_mangrove": {
+      "mean": 0.017246769986372357,
+      "sd": 0.0060989986398144
+     },
+     "recall_mangrove": {
+      "mean": 0.3136051246923152,
+      "sd": 0.2508178628353831
+     },
+     "f1_mangrove": {
+      "mean": 0.031836805013048364,
+      "sd": 0.01334467893935888
+     },
+     "accuracy": {
+      "mean": 0.32948252360026037,
+      "sd": 0.4024673607449743
+     },
+     "mangrove_share_truth": {
+      "mean": 0.04054168701171875,
+      "sd": 0.0
+     }
+    },
+    "kubu_raya": {
+     "iou_mangrove": {
+      "mean": 0.16640431950164705,
+      "sd": 0.0621851416865587
+     },
+     "iou_other": {
+      "mean": 0.2453254725826335,
+      "sd": 0.24072280921214503
+     },
+     "miou": {
+      "mean": 0.2058648960421403,
+      "sd": 0.08966452351737611
+     },
+     "precision_mangrove": {
+      "mean": 0.18495998241125833,
+      "sd": 0.03919026603679459
+     },
+     "recall_mangrove": {
+      "mean": 0.6665531310201361,
+      "sd": 0.3839917986240564
+     },
+     "f1_mangrove": {
+      "mean": 0.28199246108413994,
+      "sd": 0.0938837622674789
+     },
+     "accuracy": {
+      "mean": 0.3628578186035156,
+      "sd": 0.1580640387110326
+     },
+     "mangrove_share_truth": {
+      "mean": 0.20831451416015626,
+      "sd": 0.0
+     }
+    },
+    "mimika": {
+     "iou_mangrove": {
+      "mean": 0.36713039487737237,
+      "sd": 0.27460867365473396
+     },
+     "iou_other": {
+      "mean": 0.3821166958538946,
+      "sd": 0.04102812734805443
+     },
+     "miou": {
+      "mean": 0.3746235453656335,
+      "sd": 0.11679054154771837
+     },
+     "precision_mangrove": {
+      "mean": 0.45472989509364975,
+      "sd": 0.20206117491638045
+     },
+     "recall_mangrove": {
+      "mean": 0.598658917482014,
+      "sd": 0.466817486042985
+     },
+     "f1_mangrove": {
+      "mean": 0.4912941820889431,
+      "sd": 0.3420177110460656
+     },
+     "accuracy": {
+      "mean": 0.5654195149739584,
+      "sd": 0.10381290117026166
+     },
+     "mangrove_share_truth": {
+      "mean": 0.47901229858398436,
+      "sd": 0.0
+     }
+    },
+    "segara_anakan": {
+     "iou_mangrove": {
+      "mean": 0.1502767957883914,
+      "sd": 0.10696320074965472
+     },
+     "iou_other": {
+      "mean": 0.6841011689644323,
+      "sd": 0.15995246721691112
+     },
+     "miou": {
+      "mean": 0.41718898237641183,
+      "sd": 0.046444298205773484
+     },
+     "precision_mangrove": {
+      "mean": 0.18206289300133652,
+      "sd": 0.07662653846139734
+     },
+     "recall_mangrove": {
+      "mean": 0.5521058013026289,
+      "sd": 0.45865885215389723
+     },
+     "f1_mangrove": {
+      "mean": 0.2506490424338823,
+      "sd": 0.17163133515823353
+     },
+     "accuracy": {
+      "mean": 0.7101559448242187,
+      "sd": 0.13475719935815753
+     },
+     "mangrove_share_truth": {
+      "mean": 0.11764602661132813,
+      "sd": 0.0
+     }
+    }
+   },
+   "per_seed": [
+    {
+     "pooled": {
+      "iou_mangrove": 0.058168112459757476,
+      "iou_other": 0.6503708509511713,
+      "miou": 0.3542694817054644,
+      "precision_mangrove": 0.12208385386715316,
+      "recall_mangrove": 0.09999541612556495,
+      "f1_mangrove": 0.10994115542669906,
+      "accuracy": 0.6577609252929687,
+      "pixels": 26214400,
+      "mangrove_share_truth": 0.21137863159179687
+     },
+     "per_site": {
+      "kendari": {
+       "iou_mangrove": 0.009627995642303558,
+       "iou_other": 0.7927601930333864,
+       "miou": 0.401194094337845,
+       "precision_mangrove": 0.011806332071793107,
+       "recall_mangrove": 0.049594646473010304,
+       "f1_mangrove": 0.019072362660027934,
+       "accuracy": 0.7931768798828125,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.04054168701171875
+      },
+      "kubu_raya": {
+       "iou_mangrove": 0.09645820673025023,
+       "iou_other": 0.5221533639034119,
+       "miou": 0.30930578531683106,
+       "precision_mangrove": 0.14133677894986602,
+       "recall_mangrove": 0.23299785381003654,
+       "f1_mangrove": 0.17594506774298022,
+       "accuracy": 0.5453465270996094,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.20831451416015626
+      },
+      "mimika": {
+       "iou_mangrove": 0.05090590669525897,
+       "iou_other": 0.4293454313169783,
+       "miou": 0.24012566900611862,
+       "precision_mangrove": 0.22148054247564253,
+       "recall_mangrove": 0.062000060523914116,
+       "f1_mangrove": 0.09688004676905985,
+       "accuracy": 0.4462931823730469,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.47901229858398436
+      },
+      "segara_anakan": {
+       "iou_mangrove": 0.027210641388863414,
+       "iou_other": 0.8455628312147695,
+       "miou": 0.43638673630181646,
+       "precision_mangrove": 0.09616257133987631,
+       "recall_mangrove": 0.03656137119733335,
+       "f1_mangrove": 0.0529796719241005,
+       "accuracy": 0.8462271118164062,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.11764602661132813
+      }
+     },
+     "confusion_pooled": [
+      [
+       16688717,
+       3984519
+      ],
+      [
+       4987073,
+       554091
+      ]
+     ]
+    },
+    {
+     "pooled": {
+      "iou_mangrove": 0.22404648772796842,
+      "iou_other": 0.31762306319924566,
+      "miou": 0.270834775463607,
+      "precision_mangrove": 0.23928354337283497,
+      "recall_mangrove": 0.7786845868485394,
+      "f1_mangrove": 0.36607512863965735,
+      "accuracy": 0.4299404525756836,
+      "pixels": 26214400,
+      "mangrove_share_truth": 0.21137863159179687
+     },
+     "per_site": {
+      "kendari": {
+       "iou_mangrove": 0.015611773663422663,
+       "iou_other": 0.1121520403082226,
+       "miou": 0.06388190698582263,
+       "precision_mangrove": 0.016094133294187768,
+       "recall_mangrove": 0.34249173861660404,
+       "f1_mangrove": 0.030743585429517595,
+       "accuracy": 0.12447998046875,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.04054168701171875
+      },
+      "kubu_raya": {
+       "iou_mangrove": 0.18731864807485624,
+       "iou_other": 0.1286419161307984,
+       "miou": 0.15798028210282733,
+       "precision_mangrove": 0.19634857872800532,
+       "recall_mangrove": 0.8028816079577501,
+       "f1_mangrove": 0.3155322261274658,
+       "accuracy": 0.27437820434570315,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.20831451416015626
+      },
+      "mimika": {
+       "iou_mangrove": 0.5049577073224394,
+       "iou_other": 0.3617260129094737,
+       "miou": 0.43334186011595655,
+       "precision_mangrove": 0.5663773195456037,
+       "recall_mangrove": 0.8232102839686486,
+       "f1_mangrove": 0.6710590003500364,
+       "accuracy": 0.6134152221679687,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.47901229858398436
+      },
+      "segara_anakan": {
+       "iou_mangrove": 0.22087450456338176,
+       "iou_other": 0.6810388030377954,
+       "miou": 0.4509566538005886,
+       "precision_mangrove": 0.24338361317083634,
+       "recall_mangrove": 0.7048618361748626,
+       "f1_mangrove": 0.36182998946705425,
+       "accuracy": 0.7074884033203125,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.11764602661132813
+      }
+     },
+     "confusion_pooled": [
+      [
+       6955812,
+       13717424
+      ],
+      [
+       1226345,
+       4314819
+      ]
+     ]
+    },
+    {
+     "pooled": {
+      "iou_mangrove": 0.2386196303756064,
+      "iou_other": 0.2431191361583604,
+      "miou": 0.2408693832669834,
+      "precision_mangrove": 0.24460128031800632,
+      "recall_mangrove": 0.9070426358072059,
+      "f1_mangrove": 0.38529928724485984,
+      "accuracy": 0.3882354736328125,
+      "pixels": 26214400,
+      "mangrove_share_truth": 0.21137863159179687
+     },
+     "per_site": {
+      "kendari": {
+       "iou_mangrove": 0.02338143456938221,
+       "iou_other": 0.049648818956129444,
+       "miou": 0.036515126762755826,
+       "precision_mangrove": 0.023839844593136195,
+       "recall_mangrove": 0.5487289889873312,
+       "f1_mangrove": 0.04569446694959956,
+       "accuracy": 0.07079071044921875,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.04054168701171875
+      },
+      "kubu_raya": {
+       "iou_mangrove": 0.2154361036998347,
+       "iou_other": 0.08518113771369026,
+       "miou": 0.15030862070676249,
+       "precision_mangrove": 0.21719458955590362,
+       "recall_mangrove": 0.9637799312926216,
+       "f1_mangrove": 0.3545000893819738,
+       "accuracy": 0.2688487243652344,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.20831451416015626
+      },
+      "mimika": {
+       "iou_mangrove": 0.5455275706144189,
+       "iou_other": 0.3552786433352317,
+       "miou": 0.45040310697482533,
+       "precision_mangrove": 0.576331823259703,
+       "recall_mangrove": 0.9107664079534794,
+       "f1_mangrove": 0.7059434991477331,
+       "accuracy": 0.6365501403808593,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.47901229858398436
+      },
+      "segara_anakan": {
+       "iou_mangrove": 0.20274524141292902,
+       "iou_other": 0.5257018726407319,
+       "miou": 0.36422355702683046,
+       "precision_mangrove": 0.20664249449329689,
+       "recall_mangrove": 0.9148941965356905,
+       "f1_mangrove": 0.3371374659104921,
+       "accuracy": 0.5767523193359375,
+       "pixels": 6553600,
+       "mangrove_share_truth": 0.11764602661132813
+      }
+     },
+     "confusion_pooled": [
+      [
+       5151288,
+       15521948
+      ],
+      [
+       515092,
+       5026072
+      ]
+     ]
+    }
+   ]
+  }
+ },
+ "val": {
+  "miou": {
+   "mean": 0.8176944367857565,
+   "sd": 0.011921385301533551,
+   "per_seed": [
+    0.8188691052208136,
+    0.8052292011097051,
+    0.8289850040267509
+   ]
+  },
+  "iou_mangrove": {
+   "mean": 0.7821059877686115,
+   "sd": 0.013263385992915771,
+   "per_seed": [
+    0.7813661048524578,
+    0.7692280298479242,
+    0.7957238286054527
+   ]
+  }
+ },
+ "per_seed": [
+  {
+   "seed": 0,
+   "train_seconds": 3744.0935831069946,
+   "epochs_run": 23,
+   "best_epoch": 13,
+   "seconds_per_epoch": 162.66513473054638,
+   "train_only_seconds_per_epoch": 151.71032490937606,
+   "val_miou": 0.8188691052208136,
+   "val_iou_mangrove": 0.7813661048524578,
+   "test_seconds": 166.91374516487122
+  },
+  {
+   "seed": 1,
+   "train_seconds": 4233.586353778839,
+   "epochs_run": 28,
+   "best_epoch": 18,
+   "seconds_per_epoch": 151.19129845074244,
+   "train_only_seconds_per_epoch": 141.04368653467722,
+   "val_miou": 0.8052292011097051,
+   "val_iou_mangrove": 0.7692280298479242,
+   "test_seconds": 141.44902443885803
+  },
+  {
+   "seed": 2,
+   "train_seconds": 6013.244783163071,
+   "epochs_run": 41,
+   "best_epoch": 31,
+   "seconds_per_epoch": 146.6569921272557,
+   "train_only_seconds_per_epoch": 136.8589658620881,
+   "val_miou": 0.8289850040267509,
+   "val_iou_mangrove": 0.7957238286054527,
+   "test_seconds": 111.28343892097473
+  }
+ ],
+ "params": 7765666,
+ "input": "12 channels: S2 B2 B3 B4 B5 B8 B8A B11 B12 reflectance and S1 VV VH dB, each z-scored with train-split mean/std (stats.json); NaN -> 0 after z-scoring; plus optical validity mask (all 8 bands finite) and SAR validity mask (VV and VH finite)",
+ "architecture": "U-Net, 4 down levels, widths 32-64-128-256-512, 2x(conv3x3-BN-ReLU) per block, maxpool down, ConvTranspose2d up, 1x1 head to 2 classes",
+ "config": {
+  "epochs_max": 60,
+  "patience": 10,
+  "batch": 8,
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "optimizer": "AdamW",
+  "loss": "cross-entropy, ignore 255",
+  "augmentation": "one of identity/hflip/vflip/rot180 per batch, uniform",
+  "selection": "best val-split pooled mIoU",
+  "threads": 5,
+  "limit": null,
+  "cloud_seed": 2027,
+  "n_patches": {
+   "train": 319,
+   "val": 80,
+   "test": 400
+  }
+ }
+}

@@ -1,0 +1,3 @@
+[submodule "vendor/floro"]
+	path = vendor/floro
+	url = https://github.com/jorlrodriguezg/floro.git
