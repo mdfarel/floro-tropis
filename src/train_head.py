@@ -267,12 +267,15 @@ def eval_batches(split, batch):
 
 
 # --------------------------------------------------------------------------------------------------- train/eval
+DEVICE = "cpu"  # set from --device in main(); "cuda" runs the head on a GPU
+
+
 @torch.inference_mode()
 def evaluate(model, split, batch):
     model.eval()
     acc = ConfusionAccumulator()
     for s, x in _prefetch(eval_batches(split, batch)):
-        pred = model(x).argmax(1).to(torch.uint8).numpy()
+        pred = model(x.to(DEVICE)).argmax(1).to(torch.uint8).cpu().numpy()
         for k in range(pred.shape[0]):
             acc.update(pred[k], split.labels[s + k], split.sites[s + k])
     return acc.report()
@@ -302,7 +305,7 @@ def set_seed(seed):
 def train_seed(seed, args, train, val, in_ch):
     set_seed(seed)
     out_size = tuple(train.labels.shape[1:])
-    model = UPerNetHead(in_ch, channels=args.channels, neck=args.neck, out_size=out_size)
+    model = UPerNetHead(in_ch, channels=args.channels, neck=args.neck, out_size=out_size).to(DEVICE)
     opt = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
     rng = np.random.default_rng(seed)
     n_aug, n = train.feats.shape[:2]
@@ -324,6 +327,7 @@ def train_seed(seed, args, train, val, in_ch):
         pairs = make_epoch_pairs(n_aug, n, args.batch, rng)
         loss_sum, loss_n = 0.0, 0
         for x, y in _prefetch(train_batches(train, pairs, args.batch)):
+            x, y = x.to(DEVICE), y.to(DEVICE)
             for g in opt.param_groups:
                 g["lr"] = args.lr * lr_factor(step, total_steps, args.schedule)
             step += 1
@@ -416,6 +420,7 @@ def main():
     ap.add_argument("--channels", type=int, default=128, help="UPerNet decoder channels (PANGAEA 512; CPU 128)")
     ap.add_argument("--neck", choices=("fused", "pangaea"), default="fused", help="see src/head.py")
     ap.add_argument("--threads", type=int, default=16)
+    ap.add_argument("--device", default="cpu", help="torch device for the head: cpu (default), cuda, or auto")
     ap.add_argument("--limit", type=int, default=0, help="first N patches of each split (testing only)")
     ap.add_argument("--features-dir", type=Path, default=ROOT / "data" / "features")
     ap.add_argument("--patches-dir", type=Path, default=ROOT / "data" / "patches")
@@ -425,6 +430,10 @@ def main():
     if args.batch < 2:
         ap.error("--batch must be >= 2 (BatchNorm)")
 
+    global DEVICE
+    DEVICE = ("cuda" if torch.cuda.is_available() else "cpu") if args.device == "auto" else args.device
+    if DEVICE.startswith("cuda"):
+        os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")  # deterministic cuBLAS
     torch.set_num_threads(args.threads)
     torch.use_deterministic_algorithms(True, warn_only=True)
 
@@ -477,6 +486,7 @@ def main():
                 "epochs": args.epochs, "patience": args.patience, "batch": args.batch, "eval_batch": args.eval_batch,
                 "lr": args.lr, "weight_decay": args.weight_decay, "schedule": args.schedule,
                 "channels": args.channels, "neck": args.neck, "limit": args.limit,
+                **({"device": DEVICE} if DEVICE != "cpu" else {}),
                 "inputs": {k: (s.sidecar or {}).get("created") for k, s in
                            [("train", train), ("val", val)] + [(c, t) for c, t in tests.items()]}}
     done = {}
@@ -551,7 +561,7 @@ def main():
             "batch": args.batch, "epochs_max": args.epochs, "patience": args.patience,
             "early_stopping": "pooled val mIoU (metrics.py, 2 classes); best-epoch weights restored",
             "augmentations": list(AUGS), "epoch": "all A x N (aug, patch) pairs once, seeded shuffle",
-            "threads": args.threads, "limit": args.limit or None,
+            "threads": args.threads, "limit": args.limit or None, "device": DEVICE,
         },
         "inputs": {
             k: {"path": _rel(s.path), "shape": list(s.feats.shape), "checks": s.checks, "sidecar": s.sidecar}

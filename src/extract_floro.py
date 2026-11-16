@@ -128,6 +128,7 @@ def main(argv=None):
     ap.add_argument("--cond", choices=list(COVER), required=True)
     ap.add_argument("--batch", type=int, default=8)
     ap.add_argument("--threads", type=int, default=16)
+    ap.add_argument("--device", default="cpu", help="torch device for the encoder: cpu (default), cuda, or auto")
     ap.add_argument("--limit", type=int, default=None, help="only the first N patches of the split (testing)")
     ap.add_argument("--out-dir", default=None,
                     help=f"default data/features for --input-scale {DEFAULT_INPUT_SCALE}, else data/features_<scale>")
@@ -230,6 +231,9 @@ def main(argv=None):
     enc = None
     if done < n:
         enc = build_floro(a.variant, stats_path, weights_path=a.weights, input_scale=a.input_scale)
+        dev = ("cuda" if torch.cuda.is_available() else "cpu") if a.device == "auto" else a.device
+        enc.to(dev)
+        print(f"[extract] encoder on {dev}", flush=True)
     cover = COVER[a.cond]
     for pos in range(done, n, a.batch):
         ids = idx[pos: pos + a.batch]
@@ -241,7 +245,7 @@ def main(argv=None):
         for aug in range(n_aug):
             t0 = time.time()
             feats = enc.encode(augment(opt, aug), augment(sb, aug))
-            arr = torch.stack(feats, dim=1).numpy().astype(np.float16)  # (b, 4, 1024, 16, 16)
+            arr = torch.stack(feats, dim=1).float().cpu().numpy().astype(np.float16)  # (b, 4, 1024, 16, 16)
             enc_seconds += time.time() - t0
             enc_samples += b
             if not np.isfinite(arr).all():
@@ -292,6 +296,7 @@ def main(argv=None):
         "normalisation": normalisation_params(a.variant, stats_path, a.input_scale),
         "fingerprint": key,
         "threads": a.threads,
+        "device": a.device,
         "batch": a.batch,
         "limit": a.limit,
         "n_patches": n,

@@ -239,6 +239,13 @@ class FloroEncoder:
         self.load_report = load_report
         self.output_layers = list(OUTPUT_LAYERS)
         self.norm_sha1 = None
+        self.device = "cpu"
+
+    def to(self, device):
+        """Move the frozen encoder to a torch device (e.g. "cuda"); inputs follow in encode()."""
+        self.device = str(device)
+        self.wrapper.to(self.device)
+        return self
 
     def describe_input(self):
         return describe_input(self.variant, self.input_scale)
@@ -273,11 +280,11 @@ class FloroEncoder:
 
     @torch.inference_mode()
     def encode(self, optical, sar=None):
-        image = {"optical": self._prep(optical, "optical")}
+        image = {"optical": self._prep(optical, "optical").to(self.device)}
         if self.use_sar:
             if sar is None:
                 raise ValueError("variant s2s1 needs sar")
-            image["sar"] = self._prep(sar, "sar")
+            image["sar"] = self._prep(sar, "sar").to(self.device)
         feats = self.wrapper(image)
         assert len(feats) == len(OUTPUT_LAYERS), len(feats)
         return feats
