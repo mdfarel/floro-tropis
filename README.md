@@ -71,6 +71,29 @@ Full tables (precision, recall, per-site and per-seed scores, site-mean IoU, IoU
    its clean IoU from 0.743 to 0.795 (early stopping kept epoch 2, then epoch 23). Re-runs of two frozen-encoder heads
    reproduced clean IoU within 0.006.
 
+### Follow-up checks on a Colab GPU (November 2026)
+
+[`colab/floro_c512.ipynb`](colab/floro_c512.ipynb) rebuilt everything from scratch on a Colab L4 GPU and trained the
+FLORO (S2 + S1) head with the PANGAEA decoder width. Results: [results/colab/](results/colab/).
+
+- **The data pipeline reproduces.** The rebuilt patches match the published index exactly (all patch rows identical,
+  maximum difference 0.0 in mangrove share and valid-pixel share, train statistics within 9 × 10⁻⁷), and the FLORO
+  weights have the same SHA-256.
+- **A PANGAEA-size decoder does not help.** Same GPU, same seeds, 3 each:
+
+  | FLORO (S2 + S1) head | Parameters | Clean | 50% cloud | Radar only (MCC) | Best epochs |
+  |---|---|---|---|---|---|
+  | 128 channels (published, CPU) | 8.7 M | 0.785 ± 0.012 | 0.639 ± 0.009 | 0.16 ± 0.10 | 17, 25, 5 |
+  | 128 channels (GPU control) | 8.7 M | 0.779 ± 0.005 | 0.617 ± 0.036 | 0.13 ± 0.15 | 17, 29, 31 |
+  | 512 channels (GPU, PANGAEA width) | 41.7 M | 0.770 ± 0.021 | 0.572 ± 0.075 | 0.29 ± 0.14 | 7, 7, 5 |
+
+  Per-seed differences (512 minus 128, same seed) are mixed: clean −0.032, −0.007, +0.015; 50% cloud −0.168, +0.022,
+  +0.011. The 512-channel head peaks within 5 to 7 epochs, so with 319 training patches the larger decoder mainly
+  overfits sooner; it does not change any finding above. Its higher radar-only MCC comes with mapping 30% of the area as
+  mangrove (truth 21%) and varies widely across seeds.
+- **CPU and GPU agree within run-to-run noise** for the 128-channel head on clean imagery (0.785 vs 0.779); the 50%
+  cloud score moves more (0.639 vs 0.617), in line with finding 7.
+
 ### Limitations and disclosures
 
 - The ± values are seed variation only. Patch sampling adds roughly ±0.03-0.04 IoU; there are only 4 test sites, and
@@ -79,7 +102,8 @@ Full tables (precision, recall, per-site and per-seed scores, site-mean IoU, IoU
   boosting on clean imagery, and FLORO (S2 + S1) over gradient boosting at 50% cloud. Everything else is indicative.
 - This compares whole pipelines, not pretraining alone: bands, radar, missing-data handling and training budgets
   differ (heads see 4 cached flips per patch with a cosine schedule; the U-Net one random flip per batch with a constant
-  learning rate). The UPerNet head (8.7 M parameters) is larger than the U-Net (7.8 M). Encoders are frozen; nothing
+  learning rate). The UPerNet head (8.7 M parameters, 128 decoder channels; the PANGAEA width of 512 was checked
+  separately above) is larger than the U-Net (7.8 M). Encoders are frozen; nothing
   here speaks to fine-tuned foundation models.
 - Clouds are simulated as perfect masks on two-year median composites that already had a clear-sky value at 99.9% of
   test pixels: no haze, shadow or mask errors. The 50% cloud results are not operational performance on real cloudy

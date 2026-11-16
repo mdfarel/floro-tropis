@@ -1,0 +1,230 @@
+{
+ "model": "floro-s2s1",
+ "cond": "clean",
+ "split": "val",
+ "shape": [
+  80,
+  4,
+  1024,
+  16,
+  16
+ ],
+ "layers": [
+  6,
+  12,
+  18,
+  23
+ ],
+ "seconds_per_sample": 0.0695,
+ "input": "Sentinel-2 L2A B2,B3,B4,B5,B8,B8A,B11,B12 reflectance 0..1 + Sentinel-1 VV,VH dB; FLORO-pretraining z=(x-mean_floro)/(std_floro+1e-6) with floro.yaml floro_stats (as NormalizeWithValidity in FLORO pretraining) after physical range check (optical 0..1, sar -60..20) and finite check; a band group (BGR, RE, NIR, NIR2, SWIR, SAR VV+VH) with any invalid band -> NaN -> FLORO_Wrapper input_scale=floro_norm (0 with validity channel 0); dataset mean/std not used; availability_validity_mode=original, mask ratios 0, absolute pos-emb",
+ "dtype": "float16",
+ "axes": "patch, layer, channel, grid_h, grid_w",
+ "augmentations": null,
+ "clouds": null,
+ "input_scale": "floro_z",
+ "input_scale_rationale": "default, chosen on a priori grounds: identical to FLORO pretraining (NormalizeWithValidity with floro_stats, invalid band group -> 0 with validity 0); a development trial on 25 test patches is disclosed in the README",
+ "weights": "floro_encoder_202603_ep150.safetensors",
+ "stats": "data/patches/stats.json",
+ "stats_sha1": "4f81c2349ccb6cab96dc4643f5f3685ceefd3ccf",
+ "normalisation": {
+  "input_scale": "floro_z",
+  "bands": {
+   "optical": [
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "B8",
+    "B8A",
+    "B11",
+    "B12"
+   ],
+   "sar": [
+    "VV",
+    "VH"
+   ]
+  },
+  "data_min": {
+   "optical": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "sar": [
+    -60.0,
+    -60.0
+   ]
+  },
+  "data_max": {
+   "optical": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "sar": [
+    20.0,
+    20.0
+   ]
+  },
+  "floro_stats": {
+   "optical": {
+    "mean": {
+     "B2": 0.2073523,
+     "B3": 0.2670019,
+     "B4": 0.28107855,
+     "B5": 0.24270512,
+     "B8": 0.2793084,
+     "B8A": 0.14631674,
+     "B11": 0.20326711,
+     "B12": 0.14910233
+    },
+    "std": {
+     "B2": 0.18876277,
+     "B3": 0.21284738,
+     "B4": 0.20284666,
+     "B5": 0.15357633,
+     "B8": 0.12527913,
+     "B8A": 0.17737003,
+     "B11": 0.11302987,
+     "B12": 0.09519225
+    }
+   },
+   "mods": {
+    "mean": {
+     "VV": -11.424427,
+     "VH": -18.914251
+    },
+    "std": {
+     "VV": 3.4653134,
+     "VH": 4.3036957
+    }
+   }
+  }
+ },
+ "fingerprint": {
+  "model": "floro-s2s1",
+  "split": "val",
+  "cond": "clean",
+  "shape": [
+   80,
+   4,
+   1024,
+   16,
+   16
+  ],
+  "input_scale": "floro_z",
+  "weights": {
+   "name": "floro_encoder_202603_ep150.safetensors",
+   "bytes": 1229409976
+  },
+  "augmentations": null,
+  "clouds": null,
+  "idx_sha1": "d706f0f15989bec6ca0fe10bfeb7d7abb302895d",
+  "meta_rows_sha1": "a97907601c07688515382b0258572ad68c998d53",
+  "patches_sha1": "da4b8eb99cc0087b63c9c5212495dbf3b813a8ba",
+  "norm_sha1": "a735d0e07e3150dd41a7b2121ef814c2a9ad2a0f"
+ },
+ "threads": 2,
+ "device": "cuda",
+ "batch": 16,
+ "limit": null,
+ "n_patches": 80,
+ "sites": {
+  "mahakam": 20,
+  "sembilang": 20,
+  "bintuni": 20,
+  "langsa": 20
+ },
+ "idx": [
+  80,
+  81,
+  82,
+  83,
+  84,
+  85,
+  86,
+  87,
+  88,
+  89,
+  90,
+  91,
+  92,
+  93,
+  94,
+  95,
+  96,
+  97,
+  98,
+  99,
+  180,
+  181,
+  182,
+  183,
+  184,
+  185,
+  186,
+  187,
+  188,
+  189,
+  190,
+  191,
+  192,
+  193,
+  194,
+  195,
+  196,
+  197,
+  198,
+  199,
+  280,
+  281,
+  282,
+  283,
+  284,
+  285,
+  286,
+  287,
+  288,
+  289,
+  290,
+  291,
+  292,
+  293,
+  294,
+  295,
+  296,
+  297,
+  298,
+  299,
+  379,
+  380,
+  381,
+  382,
+  383,
+  384,
+  385,
+  386,
+  387,
+  388,
+  389,
+  390,
+  391,
+  392,
+  393,
+  394,
+  395,
+  396,
+  397,
+  398
+ ]
+}
